@@ -1,0 +1,14 @@
+﻿<xapCache source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\Bin\Debug\AUWP7.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="12/06/2011 12:17:35">
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="02/06/2011 23:50:47" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\obj\Debug\AUWP7.dll" archivePath="AUWP7.dll" lastWriteTime="12/06/2011 12:17:34" />
+  <file source="C:\Program Files\Microsoft SDKs\Windows Phone\v7.0\Libraries\Silverlight\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="01/09/2010 4:51:10" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\Bin\Debug\PhonePerformance.dll" archivePath="PhonePerformance.dll" lastWriteTime="08/05/2011 19:51:02" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\ApplicationIcon.png" archivePath="ApplicationIcon.png" lastWriteTime="29/05/2011 19:08:37" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\Background.png" archivePath="Background.png" lastWriteTime="02/06/2011 23:13:17" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\icons\appbar.back.rest.png" archivePath="icons\appbar.back.rest.png" lastWriteTime="30/05/2011 17:14:08" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\icons\appbar.feature.search.rest.png" archivePath="icons\appbar.feature.search.rest.png" lastWriteTime="17/08/2010 16:41:24" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\icons\appbar.next.rest.png" archivePath="icons\appbar.next.rest.png" lastWriteTime="30/05/2011 17:14:08" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\icons\image.loading.png" archivePath="icons\image.loading.png" lastWriteTime="02/06/2011 23:40:32" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\SplashScreenImage.jpg" archivePath="SplashScreenImage.jpg" lastWriteTime="30/01/2011 20:18:53" />
+  <file source="C:\Users\Fran\Documents\Visual Studio 2010\Projects\AUWP7\AUWP7\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="08/05/2011 20:12:56" />
+</xapCache>

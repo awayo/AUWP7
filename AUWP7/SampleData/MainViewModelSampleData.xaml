@@ -1,0 +1,19 @@
+<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AUWP7" 
+    SampleProperty="Series">
+  
+    <local:MainViewModel.Series>
+        <local:ItemViewModel Titulo="Gosick" Subtitulo="Bones / Misterio" Imagen="http://www.aunder.org/au/Imagenes/Betsubara_logo.png"/>
+        <local:ItemViewModel Titulo="Gosick" Subtitulo="Bones / Misterio" Imagen="http://www.aunder.org/au/Imagenes/gosick.jpg"/>
+        <local:ItemViewModel Titulo="Gosick" Subtitulo="Bones / Misterio" Imagen="http://www.aunder.org/au/Imagenes/gosick.jpg"/>
+        <local:ItemViewModel Titulo="Gosick" Subtitulo="Bones / Misterio" Imagen="http://www.aunder.org/au/Imagenes/gosick.jpg"/>
+    </local:MainViewModel.Series>
+    <local:MainViewModel.Entes>
+        <local:ItemViewModel Titulo="_TheAway" Subtitulo="Ente" Imagen="La historia se situa en 1924, en un pequeño país cerca de los Alpes llamado Saubure. Kazuya Kujo, tercer hijo de un soldado imperial japonés llega para estudiar en la academia Saint Marguerite. En un curioso jardín en lo alto de la biblioteca, Kazuya conoce a Victorica, una curiosa chica aficionada a los misterios."/>
+     </local:MainViewModel.Entes>
+    <local:MainViewModel.Noticias>
+        <local:ItemViewModel Titulo="Gosick 03" Subtitulo="Jueves, 27 de Enero del 2011 a las 21:22:33 coneone" Imagen="http://www.aunder.org/au/Imagenes/gosick.jpg"/>
+    </local:MainViewModel.Noticias>
+</local:MainViewModel>

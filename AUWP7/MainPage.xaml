@@ -1,0 +1,144 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AUWP7.MainPage"
+    xmlns:delay="clr-namespace:Delay;assembly=PhonePerformance"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:l="clr-namespace:AUWP7.Hash"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_GotFocus">
+<phone:PhoneApplicationPage.Resources>
+        <l:BoolToVisibilityConverter x:Key="converter" />
+        <Style x:Key="ListBoxStyle1" TargetType="ListBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Padding" Value="0"/>
+       <!-- <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                        <ScrollViewer x:Name="ScrollViewer"  BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" Padding="0,-5">
+                            <StackPanel Margin="20,-5,30,5">
+                            <ItemsPresenter/>
+                                <Button Visibility="{Binding LoadMore, Converter={StaticResource converter}}" Content="cargar más +" Click="Button_Click"></Button>
+                        </StackPanel>
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter> -->
+    </Style>
+</phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+    	<Grid.Background>
+    		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+    			<GradientStop Color="#FFF16614" Offset="0"/>
+    			<GradientStop Color="{StaticResource GradienteAU}" Offset="1"/>
+    		</LinearGradientBrush>
+    	</Grid.Background>
+ 
+        <!--Pivot control-->
+        <controls:Pivot Title="AnimeUnderground" FontStretch="Condensed" FontWeight="Normal" FontSize="51" HorizontalAlignment="Left" Width="480" Loaded="PhoneApplicationPage_GotFocus">
+        	<controls:Pivot.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FFFF5E00" Offset="0"/>
+        			<GradientStop Color="#FF541F00" Offset="1"/>
+        		</LinearGradientBrush>
+        	</controls:Pivot.Background>
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Novedades" Margin="0,-50">
+                <!--Double line list with text wrapping-->
+                <ListBox Name="novedades" Margin="0,-60,-12,0" ItemsSource="{Binding Noticias}" Width="440" Style="{StaticResource ListBoxStyle1}" Height="560" SelectionChanged="novedades_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17" Tag="{Binding Id}">
+                                <!--Replace rectangle with image-->
+                                <Image
+                                    Source="{Binding Imagen}"
+                                    Width="150"
+                                    Height="150" VerticalAlignment="Top" Margin="0,10,0,0" />
+                                <StackPanel Width="301">
+                                    <TextBlock Text="" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="8" FontWeight="Thin" FontStyle="Normal" FontStretch="ExtraCondensed" FontFamily="Segoe WP" />
+                                    <TextBlock Text="{Binding Titulo}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="32" FontWeight="Thin" FontStyle="Normal" FontStretch="ExtraCondensed" FontFamily="Segoe WP" />
+                                    <TextBlock Text="{Binding Subtitulo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" UseLayoutRounding="True" Foreground="#E3FFFFFF" FontStretch="Normal" FontWeight="Normal" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+            <!--Pivot item two-->
+            <controls:PivotItem Header="Series" Margin="0,-50">
+                <!--Double line list with text wrapping-->
+                <ListBox Name="series" Margin="0,-60,-12,0" ItemsSource="{Binding Series}" Height="560" Style="{StaticResource ListBoxStyle1}" SelectionChanged="series_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17" Tag="{Binding Id}">
+                                <!--Replace rectangle with image-->
+                                <Image
+                                    Source="{Binding Imagen}"
+                                    Width="150"
+                                   Height="150" Tag="{Binding Id}" />
+                                <StackPanel Width="301">
+                                    <TextBlock Tag="{Binding Id}" Text="{Binding Titulo}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="32" FontWeight="Thin" FontStyle="Normal" FontStretch="ExtraCondensed" FontFamily="Segoe WP" />
+                                    <TextBlock Tag="{Binding Id}" Text="{Binding Subtitulo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" UseLayoutRounding="True" Foreground="#E3FFFFFF" FontStretch="Normal" FontWeight="Normal" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+ 
+            <!--Pivot item three-->
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PivotItem Header="Entes" Margin="0,-50">
+                <!--Double line list with image placeholder and text wrapping-->
+                <ListBox Name="entes" Margin="10,-60,-12,0" ItemsSource="{Binding Entes}" Height="560" Style="{StaticResource ListBoxStyle1}" SelectionChanged="entes_SelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,17" Tag="{Binding Id}">
+                                <!--Replace rectangle with image-->
+                                <Image
+                                    Source="{Binding Imagen}"
+                                    Width="150"
+                                   Height="150"/>
+                                <StackPanel Width="301">
+                                    <TextBlock Text="{Binding Titulo}" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="32" FontWeight="Thin" FontStyle="Normal" FontStretch="ExtraCondensed" FontFamily="Segoe WP" />
+                                    <TextBlock Text="{Binding Subtitulo}" TextWrapping="Wrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}" UseLayoutRounding="True" Foreground="#E3FFFFFF" FontStretch="Normal" FontWeight="Normal" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </controls:PivotItem>
+            <controls:PivotItem Header="Foro" Margin="10,10">
+                <phone:WebBrowser HorizontalAlignment="Left" Height="534" Width="418" Margin="0,10,32,0" Name="webBrowser1" VerticalAlignment="Top" IsScriptEnabled="True" Source="http://foro.aunder.org" />
+            </controls:PivotItem>
+        </controls:Pivot>
+        <ProgressBar Name="progressBar1" IsIndeterminate="True" Height="24" Margin="18,0,8,360" VerticalAlignment="Bottom" Foreground="White">
+        	<ProgressBar.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FFFF5E00" Offset="0"/>
+        			<GradientStop Color="#FF541F00" Offset="1"/>
+        		</LinearGradientBrush>
+        	</ProgressBar.Background>
+        </ProgressBar>
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="195,446,0,0" Name="textCargando" Text="Cargando..." VerticalAlignment="Top" FontSize="16" />
+    </Grid>
+ 
+    <!--Pivot-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>
